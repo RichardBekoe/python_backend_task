@@ -1,4 +1,33 @@
 # Backend Test #
+
+## Deliverables
+
+### To Run ###
+
+- Run
+```
+python3 setup/init_db.py
+python3 -m venv env
+python3 -m pip install --requirement requirements.txt
+flask --app main run
+```
+
+Examples
+```
+- post order
+POST
+http://127.0.0.1:5000/orders
+json:
+{
+	"actual_price": 1800,
+	"product_id": 4
+}
+```
+
+
+- A tool such as DB Browser for SQLite can be used to visualise the SQLite database files.
+
+
 ____
 
 As a new developer at SpeedyBoats, your first task is to help the operational team to manage orders 
