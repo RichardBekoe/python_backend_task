@@ -36,6 +36,19 @@ GET
 http://127.0.0.1:5000/orders?product_id=<value>
 ```
 
+```
+- get_order_by_id
+GET
+http://127.0.0.1:5000/orders/<value>
+get_by_id
+```
+
+```
+- delete_order_by_id
+DELETE 
+http://127.0.0.1:5000/orders/<value>
+```
+
 
 - A tool such as DB Browser for SQLite can be used to visualise the SQLite database files.
 

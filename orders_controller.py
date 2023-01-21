@@ -21,3 +21,18 @@ def filter_by_product(product_id):
     statement = "SELECT id, actual_price, product_id FROM orders WHERE product_id = ?"
     cur.execute(statement, [product_id])
     return cur.fetchall()
+
+def get_order_by_id(order_id):
+    db = get_db()
+    cur = db.cursor()
+    statement = "SELECT id, actual_price, product_id FROM orders WHERE id = ?"
+    cur.execute(statement, [order_id])
+    return cur.fetchone()
+
+def delete_order_by_id(order_id):
+    db = get_db()
+    cur = db.cursor()
+    statement = "DELETE FROM orders WHERE id = ?"
+    cur.execute(statement, [order_id])
+    db.commit()
+    return True

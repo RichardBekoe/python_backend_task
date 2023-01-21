@@ -25,13 +25,14 @@ def list_orders():
 
 
 @orders_pages.route('/<order_id>', methods=['GET'])
-def get(order_id):
-    pass
-
+def get_order_by_id(order_id):
+    result = orders_controller.get_order_by_id(order_id)
+    return jsonify(result) 
 
 @orders_pages.route('/<order_id>', methods=['DELETE'])
-def delete(order_id):
-    pass
+def delete_order_by_id(order_id):
+    result = orders_controller.delete_order_by_id(order_id)
+    return jsonify(result)
 
 
 @orders_pages.route('/<order_id>', methods=['PUT'])
