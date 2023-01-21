@@ -68,6 +68,7 @@ http://127.0.0.1:5000/orders/metrics
 
 
 - A tool such as DB Browser for SQLite can be used to visualise the SQLite database files.
+- An API testing tool was used to test responses from the routes and controllers
 
 
 ____
