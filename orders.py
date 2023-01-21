@@ -44,7 +44,8 @@ def update_order(order_id):
     return jsonify(result)
 
 @orders_pages.route('/metrics', methods=['GET'])
-def metrics():
-    pass
+def get_metrics():
+    result = orders_controller.get_metrics()
+    return jsonify(result)
 
 
