@@ -36,8 +36,12 @@ def delete_order_by_id(order_id):
 
 
 @orders_pages.route('/<order_id>', methods=['PUT'])
-def update(order_id):
-    pass
+def update_order(order_id):
+    orders_details = request.get_json()
+    actual_price = orders_details["actual_price"]
+    product_id = orders_details["product_id"]
+    result = orders_controller.update_order(actual_price, product_id, order_id)
+    return jsonify(result)
 
 @orders_pages.route('/metrics', methods=['GET'])
 def metrics():

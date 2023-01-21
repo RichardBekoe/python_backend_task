@@ -36,3 +36,11 @@ def delete_order_by_id(order_id):
     cur.execute(statement, [order_id])
     db.commit()
     return True
+
+def update_order(actual_price, product_id, order_id):
+    db = get_db()
+    cursor = db.cursor()
+    statement = "UPDATE orders SET actual_price = ?, product_id = ? WHERE id = ?"
+    cursor.execute(statement, [actual_price, product_id, order_id])
+    db.commit()
+    return True
