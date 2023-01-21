@@ -15,7 +15,13 @@ def post():
 
 @orders_pages.route('/', methods=['GET'])
 def list_orders():
-    pass
+    orders = orders_controller.list_orders()
+    if request.args:
+        product_id = request.args.get('product_id')
+        result = orders_controller.filter_by_product(product_id)
+        return jsonify(result)
+    
+    return jsonify(orders)
 
 
 @orders_pages.route('/<order_id>', methods=['GET'])

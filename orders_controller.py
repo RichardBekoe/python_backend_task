@@ -7,3 +7,17 @@ def insert_orders( actual_price, product_id):
     cur.execute(statement, [ actual_price, product_id])
     db.commit()
     return cur.lastrowid
+
+def list_orders():
+    db = get_db()
+    cur = db.cursor()
+    query = "SELECT id, actual_price, product_id FROM orders"
+    cur.execute(query)
+    return cur.fetchall()
+
+def filter_by_product(product_id):
+    db = get_db()
+    cur = db.cursor()
+    statement = "SELECT id, actual_price, product_id FROM orders WHERE product_id = ?"
+    cur.execute(statement, [product_id])
+    return cur.fetchall()

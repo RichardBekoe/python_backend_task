@@ -24,6 +24,18 @@ json:
 }
 ```
 
+```
+- list_orders
+GET
+http://127.0.0.1:5000/orders
+```
+
+```
+- list_orders and filter_by_product option
+GET
+http://127.0.0.1:5000/orders?product_id=<value>
+```
+
 
 - A tool such as DB Browser for SQLite can be used to visualise the SQLite database files.
 
